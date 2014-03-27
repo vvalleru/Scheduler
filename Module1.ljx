@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE littlejil PUBLIC "-//LASER//DTD Little-JIL 1.5//EN" "http://laser.cs.umass.edu/dtd/littlejil-1.5.dtd">
+<littlejil>
+<module>
+	<step-declaration id="_0" kind="sequential" name="New Step #0">
+		<connector>
+			<substep-connector/>
+			<step-declaration id="_2" kind="parallel" name="New Step #1">
+				<connector>
+					<substep-connector/>
+					<step-declaration id="_8" kind="leaf" name="New Step #4"/>
+				</connector>
+				<connector>
+					<substep-connector/>
+					<step-declaration id="_10" kind="leaf" name="New Step #5"/>
+				</connector>
+			</step-declaration>
+		</connector>
+		<connector>
+			<substep-connector/>
+			<step-declaration id="_4" kind="choice" name="New Step #2">
+				<connector>
+					<substep-connector/>
+					<step-declaration id="_12" kind="leaf" name="New Step #6"/>
+				</connector>
+				<connector>
+					<substep-connector/>
+					<step-declaration id="_14" kind="leaf" name="New Step #7"/>
+				</connector>
+				<connector>
+					<substep-connector/>
+					<step-declaration id="_16" kind="leaf" name="New Step #8"/>
+				</connector>
+			</step-declaration>
+		</connector>
+		<connector>
+			<substep-connector/>
+			<step-declaration id="_6" kind="try" name="New Step #3">
+				<connector>
+					<substep-connector/>
+					<step-declaration id="_20" kind="leaf" name="New Step #10"/>
+				</connector>
+				<connector>
+					<substep-connector/>
+					<step-declaration id="_18" kind="leaf" name="New Step #9"/>
+				</connector>
+			</step-declaration>
+		</connector>
+	</step-declaration>
+</module>
+
+<metadata><diagram name="New Diagram"><location id="_1" key="_0" x-position="322" y-position="101"/><location id="_3" key="_2" x-position="161" y-position="187"/><location id="_5" key="_4" x-position="366" y-position="208"/><location id="_7" key="_6" x-position="523" y-position="220"/><location id="_9" key="_8" x-position="100" y-position="291"/><location id="_11" key="_10" x-position="217" y-position="306"/><location id="_13" key="_12" x-position="336" y-position="324"/><location id="_15" key="_14" x-position="359" y-position="362"/><location id="_17" key="_16" x-position="447" y-position="343"/><location id="_19" key="_18" x-position="540" y-position="271"/><location id="_21" key="_20" x-position="563" y-position="324"/></diagram></metadata>
+</littlejil>

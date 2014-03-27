@@ -1,0 +1,68 @@
+module planning
+
+abstract sig Node {
+	nextSet: lone Node
+}
+
+abstract sig Intermediate extends Node {
+	//before: set Intermediate
+}
+
+abstract sig Leaf extends Intermediate {
+
+}
+
+one sig Sched {
+	header: one SchedEl
+}
+
+sig SchedEl {
+	nextEl: lone SchedEl,
+	ref: one Leaf
+}
+
+//fact scheduleInjection { all t, t': SchedEl | t.ref = t'.ref => t = t' }
+
+fact scheduleAcyclic{
+	//acyclicity
+	all n:Sched.header.*nextEl|n !in n.^nextEl
+}
+
+fact scheduleConnected{
+	SchedEl = Sched.header.*nextEl
+	all n:SchedEl|no n.nextEl || n in Sched.header.*nextEl
+}
+
+fact scheduleConsistent{
+	all n, n':SchedEl | n' = n.nextEl => n'.ref in n.ref.nextSet
+}
+
+fact allNodesInSched{
+	Node = SchedEl.ref
+}
+fact noSelfNext{
+	all n:Node | n !in n.nextSet
+}
+
+fact enforcePrecedence{
+	//all s: SchedEl | s.ref in M2 => s.^nextEl.ref !in M1
+}
+
+fact noCycleByNextSet {
+	all n, n':Node | n' in n.^nextSet => n !in n'.^nextSet
+}
+
+//one sig M1, M2, M3, M4 extends Leaf{}
+
+
+abstract sig M1, M2 extends Leaf{}
+one sig A1, A2 extends M1{}
+one sig A3, A4 extends M2{}
+
+//fact M1beforeM2 {
+//	M1.nextSet = M2
+//}
+
+pred empty(){}
+
+run empty for 4
